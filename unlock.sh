@@ -8,6 +8,7 @@
 
 # To execute and learn how this script can be used:
 # "unlock"
+# "unlock [TAB]" to get a list of active enabled users containing 'DOR' in /etc/passwd
 
 Green='\033[1;32m'
 Yellow='\033[1;33m'
@@ -59,15 +60,14 @@ unlock () {
 		# The following command forces the account to become unlocked
 		passwd -uf ${username}
 
-		# The following command tricks the OS security into thinking I changed my password
-		# by modifying the date in /etc/shadow file to show the current date (in EPOCH format) 
-		# as the date the password was last changed
+		# The following command tricks the OS security into thinking the account owner changed their password
+		# by simply modifying the date in /etc/shadow file to show the current date (in EPOCH format) 
 		chage -d ${current_date} ${username}
 		
 		#I don't know if we need to use this or not, so I'm just putting this here for later reference.
 		chage -I -1 ${username}
 
-		# The following command lists the password aging information for account
+		# The following command lists the password aging information for account owner
 		chage -l ${username}
 		
 		echo -e "\nA logfile was placed in ${username}'s home folder:\n${log}\n" 2>&1
