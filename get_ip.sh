@@ -1,6 +1,7 @@
 #!/bin/bash
 # 
 #   Created by: Edward Hunt
+#         Date: February 15, 2020
 #      Purpose: This program is useful for determining Fully Qualified Domain Names when you know what domains to search from.
 # Instructions: "chmod +x" to make this script executable after loading.
 
