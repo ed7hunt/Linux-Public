@@ -1,4 +1,8 @@
 #!/bin/bash
+# 
+#   Created by: Edward Hunt
+#      Purpose: This program is useful for determining Fully Qualified Domain Names when you know what domains to search from.
+# Instructions: "chmod +x" to make this script executable after loading.
 
 sort_this() {
 	arg1=$1
@@ -14,7 +18,8 @@ sort_this() {
 		read -p "Press [Enter] key when ready."
 		for hostname in $(cat $arg1)
 		do
-		i=$(echo $hostname | tr '[:upper:]' '[:lower:]' | sed -e 's//\n/g')
+		i=$(echo $hostname | tr '[:upper:]' '[:lower:]' | sed -e 's/
+/\n/g')
 		echo $i >> temp.list 
 		done
 		uniq temp.list | sort -n > $arg1
