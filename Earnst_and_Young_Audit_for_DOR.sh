@@ -1,4 +1,12 @@
 # !/bin/bash
+# Back in March 2018, Earnst and Young sent me a list of broken commands to audit GA DOR. I corrected all their
+# commands and I built a script to run on any server they wanted. Below is the output of this free labor I donated 
+# to E&Y on behalf of GA DOR's Cybersecurity Team for E&Y's audit. We never heard back from them and they never
+# thanked me or paid me for the work I did for them.
+#
+# So I am made this script OPEN-SOURCE and free for anyone to use. Anyone may use this script without making 
+# mention of where it came from.
+
 SCRIPT_CONTENTS () {
 #Dear Client,
 
