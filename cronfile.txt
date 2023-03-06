@@ -1,0 +1,55 @@
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
+PWD=/
+SHELL=/bin/bash
+
+# Example of job definition (* means it will run every time unit below):
+#
+# .------------- minute (0-59)
+# | .----------- hour (0-23)
+# | | .--------- day of month (1-31)
+# | | | .------- month (1-12) OR jan,feb,mar,apr ...
+# | | | | .----- day of week (0-6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# | | | | | .--- full path of command to be executed
+# | | | | | |
+# * * * * * command 
+
+USER=root
+MAILTO="edward.huntiv@dor.ga.gov"
+
+#      Filename: /root/rsync_backup.sh
+#    Created by: Edward Hunt
+# Last modified: Feb 22, 2018
+# Executed from: crontab (via user=root)
+#    Dependency: The following NFS share must be mounted in /etc/fstab:
+#                dor-is-exagrid.dor-is.local:/home1/shares/vdbtdororaoem01_rsync
+#         Rules: If full backup does not exist, it will create one.
+#                If full backup exists it does an incremental.
+#  Run schedule: 7PM, every day
+#      Run time: Full backups take 15 minutes.
+#                Incrementals take only a minute. 
+
+# Send an email to MAILTO.
+# 0 19 * * * /root/rsync_backup.sh > 2>&1
+
+# Do not send an email.
+0 19 * * * /root/rsync_backup.sh > /dev/null 2>&1
+
+
+#      Filename: /root/symantec_scan.sh
+#    Created by: Edward Hunt
+# Last modified: Feb 15, 2018
+# Executed from: crontab (via user=root)
+#    Dependency: Symantec Endpoint Protection must be installed.
+#  Run schedule: Midnight every day.
+#                It takes 105 minutes to run a Live Update and a full scan. 
+
+# Send an email to MAILTO.
+# 0 0 * * * /root/symantec_scan.sh > 2>&1
+
+# Do not send an email.
+0 0 * * * /root/symantec_scan.sh > /dev/null 2>&1
+
+# YOU MUST ADD A BLANK LINE BELOW THIS LINE, OR CRONTAB WILL NOT RUN.
+
+
+
