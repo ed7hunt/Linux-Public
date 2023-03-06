@@ -4,8 +4,8 @@
 # to E&Y on behalf of GA DOR's Cybersecurity Team for E&Y's audit. We never heard back from them and they never
 # thanked me or paid the State of Georgia tax payers for the work I did for them.
 #
-# So I am made this script OPEN-SOURCE and free for anyone to use. Anyone may use this script without making 
-# mention of where it came from.
+# Therefore, this script OPEN-SOURCE and free for anyone to use. Anyone may use this script without mentioning 
+# where it came from.
 
 SCRIPT_CONTENTS () {
 #Dear Client,
