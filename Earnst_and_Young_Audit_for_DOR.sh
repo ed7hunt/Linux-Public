@@ -5,7 +5,7 @@
 # thanked me or paid back the State of Georgia tax payers for the work I did for them. This was a charity project
 # to assist their newly hired analysts.
 #
-# Therefore, this script OPEN-SOURCE and free for anyone to use. Anyone may use this script without mentioning 
+# Therefore, I made this script OPEN-SOURCE and free for anyone to use. Everyone may use this script without mentioning 
 # where it came from.
 
 SCRIPT_CONTENTS () {
